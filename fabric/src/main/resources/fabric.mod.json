@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "ohsnap",
+  "version": "${version}",
+  "name": "Oh Snap",
+  "description": "Finally, I can now tell when the lead breaks...",
+  "authors": [
+    "JustDoom"
+  ],
+  "contact": {
+    "sources": "https://github.com/JustDoom/OhSnap",
+    "issues": "https://github.com/JustDoom/OhSnap/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/ohsnap/logo-fabric.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.imjustdoom.ohsnap.fabric.OhSnapFabric"
+    ]
+  },
+  "mixins": [
+    "ohsnap-common.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.21"
+  }
+}
