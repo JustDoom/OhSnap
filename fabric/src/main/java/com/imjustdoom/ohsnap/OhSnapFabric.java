@@ -1,6 +1,5 @@
-package com.imjustdoom.ohsnap.fabric;
+package com.imjustdoom.ohsnap;
 
-import com.imjustdoom.ohsnap.OhSnap;
 import net.fabricmc.api.ModInitializer;
 
 public class OhSnapFabric implements ModInitializer {

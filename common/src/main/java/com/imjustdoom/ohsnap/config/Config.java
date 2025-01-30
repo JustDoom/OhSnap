@@ -1,6 +1,6 @@
 package com.imjustdoom.ohsnap.config;
 
-import dev.architectury.injectables.annotations.ExpectPlatform;
+import com.imjustdoom.ohsnap.platform.Services;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,7 +19,7 @@ public class Config {
 
     public static void init() throws IOException {
         PROPERTIES = new Properties();
-        FILE_PATH = Path.of(getConfigDirectory() + "/ohsnap.properties");
+        FILE_PATH = Path.of(Services.PLATFORM.getConfigPath() + "/ohsnap.properties");
         if (!FILE_PATH.toFile().exists()) {
             new File(FILE_PATH.toString()).createNewFile();
         }
@@ -74,10 +74,5 @@ public class Config {
                         'volume' The volume for the snap sound
                         'pitch' The pitch for the sound
                         """);
-    }
-
-    @ExpectPlatform
-    public static Path getConfigDirectory() {
-        throw new AssertionError();
     }
 }
