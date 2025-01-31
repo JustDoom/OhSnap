@@ -16,6 +16,7 @@ public class Config {
 
     public static float VOLUME;
     public static float PITCH;
+    public static String SOUND;
 
     public static void init() throws IOException {
         PROPERTIES = new Properties();
@@ -27,6 +28,7 @@ public class Config {
 
         VOLUME = getFloat("volume", "1.0");
         PITCH = getFloat("pitch", "1.25");
+//        SOUND = getString("sound", "")
 
         save();
     }
