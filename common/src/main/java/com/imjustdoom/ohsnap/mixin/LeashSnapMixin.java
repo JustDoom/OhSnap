@@ -1,5 +1,6 @@
 package com.imjustdoom.ohsnap.mixin;
 
+import com.imjustdoom.ohsnap.OhSnap;
 import com.imjustdoom.ohsnap.config.Config;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -18,8 +19,8 @@ public interface LeashSnapMixin {
     private static <E extends Entity & Leashable> void dropLeast(E entity, boolean bl, boolean bl2, CallbackInfo ci) {
         Level level = entity.level();
 
-        if (level.isClientSide()) return;
-
-        level.playSound(null, entity, SoundEvents.BAMBOO_BREAK, SoundSource.PLAYERS, Config.VOLUME, Config.PITCH);
+        if (!level.isClientSide() && OhSnap.SOUND != null) {
+            level.playSound(null, entity, OhSnap.SOUND, SoundSource.PLAYERS, Config.VOLUME, Config.PITCH);
+        }
     }
 }
