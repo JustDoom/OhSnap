@@ -28,7 +28,7 @@ public class Config {
 
         VOLUME = getFloat("volume", "1.0");
         PITCH = getFloat("pitch", "1.25");
-//        SOUND = getString("sound", "")
+        SOUND = getString("sound", "minecraft:entity.leash_knot.break");
 
         save();
     }
@@ -75,6 +75,7 @@ public class Config {
                         Config for OhSnap
                         'volume' The volume for the snap sound
                         'pitch' The pitch for the sound
+                        'sound' The sound to play when it snaps. id:sound (minecraft:entity.leash_knot.break). Supports custom sounds
                         """);
     }
 }
