@@ -18,7 +18,7 @@ public class OhSnap {
         try {
             Config.init();
 
-            SOUND = BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse(Config.SOUND));
+            SOUND = BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.tryParse(Config.SOUND));
 
             if (SOUND == null) {
                 System.err.println("Unable to find the sound for the id `" + Config.SOUND + "`");
